@@ -1,12 +1,125 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Rock Paper Scissors</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    </head>
-    <body>
-        
-        <script src="assets/JavaScript/RPS.js" type="text/JavaScript"></script>
-    </body>
+
+<head>
+    <title>Rock Paper Scissors</title>
+    
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>Rock Paper Scissors</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div id="login">
+                            <input type="text" id="username" placeholder="Enter Username">
+                            <input type="submit" value="login" id="add-user">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" id="gameInfo">
+                                <div id="welcomeText"></div>
+                                <div id="whichTurn"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-4" id="player1">
+                                <div class="waitingDiv">
+                                    <div id="waiting1">Waiting for Player 1</div>
+                                </div>
+                                <div id="buttonChoices1">
+                                    <div class="buttonDiv">
+                                        <button id="rock1">Rock</button>
+                                    </div>
+                                    <div class="buttonDiv">
+                                        <button id="paper1">Paper</button>
+                                    </div>
+                                    <div class="buttonDiv">
+                                        <button id="scissors1">Scissors</button>
+                                    </div>    
+                                </div>
+                                <div id="winLoss">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4" id="results">
+                                <div id="placeholder"></div>
+                            </div>
+                            <div class="col-xs-4" id="player2">
+                                <div class="waitingDiv">
+                                    <div id="waiting2">Waiting for Player 2</div>
+                                </div>
+                                <div id="buttonChoices2">
+                                    <div class="buttonDiv">
+                                        <button id="rock2">Rock</button>
+                                    </div>
+                                    <div class="buttonDiv">
+                                        <button id="paper2">Paper</button>
+                                    </div>
+                                    <div class="buttonDiv">
+                                        <button id="scissors2">Scissors</button>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div id="textBox"></div> 
+                        <div id="typeText">
+                            <input type="text" id="chat-input">
+                            <input type="submit" value="Send" id="send">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="assets/JavaScript/RPS.js"></script>
+</body>
+
 </html>

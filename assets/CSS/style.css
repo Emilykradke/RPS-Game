@@ -1,0 +1,48 @@
+h1 {
+    text-align: center;
+}
+
+#username {
+    width: 40%;
+    margin-left: 28%;
+}
+
+#results {
+    border: solid 2px black;
+    height: 200px;
+}
+
+#textBox {
+    margin: 0 auto 10px;
+    border: solid 2px black;
+    height: 200px;
+    width: 65%;
+    overflow: auto;
+}
+
+#typeText {
+    margin: auto;
+    width: 65%;
+}
+
+#chat-input {
+    width: 84%;
+}
+
+#player1 {
+    border: solid 1px black;
+    height: 200px;
+}
+
+#send {
+    width: 13%;
+}
+
+.buttonDiv {
+    margin: 10px 40%;
+}
+
+#waiting1, #waiting2 {
+    margin: auto;
+    text-align: center;
+}
