@@ -25,6 +25,45 @@ var RPS = database.ref("/RockPaperScissors");
 var username1;
 var username2;
 
+// on click of the submit button for username
+$("#add-user").on("click", function(event) {
+    
+    // prevent page from reloading
+    event.preventDefault();
+
+    // grab the input from the username text and set it to the username variable
+    username1 = $("#username").val().trim();
+    username2 = $("#username").val().trim();
+
+
+    userName1.on("value", function(snapshot) {
+        if(snapshot.child("Player1").exists()){
+            userName2.set({
+                "Player2": username2
+            })
+            console.log(username2)
+        } else {
+             userName1.set({
+                 "Player1": username1
+             })
+             console.log(username1);
+        }
+        
+    })
+
+    console.log(username1);
+
+})
+
+// Get a snapshot of the current data
+userName1.child("Player1").on("value", function (snapshot) {
+    $("player1").text(snapshot.val());
+})
+
+userName2.child("Player2").on("value", function (snapshot) {
+    $("player2").text(snapshot.val());
+})
+
 // // when the login button is clicked: 
 // $("#add-user").on("click", function(event) {
 //     event.preventDefault();
