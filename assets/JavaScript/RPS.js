@@ -25,44 +25,71 @@ var RPS = database.ref("/RockPaperScissors");
 var username1;
 var username2;
 
+// When page loads, hide and show necessary parts
+$("document").ready(function(){
+    $("#waitingDiv2").hide();
+    $("#waitingDiv1").hide();
+    $("#login2").hide();
+    $("#welcomeText2").hide();
+    $("#directions2").hide();
+})
+
 // on click of the submit button for username
-$("#add-user").on("click", function(event) {
+$("#add-user1").on("click", function(event) {
     
     // prevent page from reloading
     event.preventDefault();
 
     // grab the input from the username text and set it to the username variable
-    username1 = $("#username").val().trim();
-    username2 = $("#username").val().trim();
+    var username1 = $("#username-1").val().trim();
 
+    console.log(username1)
 
-    userName1.on("value", function(snapshot) {
-        if(snapshot.child("Player1").exists()){
-            userName2.set({
-                "Player2": username2
-            })
-            console.log(username2)
-        } else {
-             userName1.set({
-                 "Player1": username1
-             })
-             console.log(username1);
-        }
-        
+    // save username1 to firebase
+    userName1.set({
+        "Player1": username1
     })
 
-    console.log(username1);
+    // hide player 1 login and show player 2 login 
+    $("#login1").hide();
+    $("#welcomeText1").show();
+    $("#directions1").hide();
+    $("#welcomeText2").hide();
+    $("#waitingDiv1").show();
+    $("#login2").show();
+    $("#directions2").show();
 
+    // populate the player 1 welcome text with the username 
+    $("#name1").text(username1);
+
+})
+
+$("#add-user2").on("click", function(event) {
+    
+    // prevent page from reloading
+    event.preventDefault();
+
+    // grab the input from the username text and set it to the username variable
+    var username2 = $("#username-2").val().trim();
+
+    console.log(username2)
+
+    // save username2 to firebase
+    userName2.set({
+        "Player2": username2
+    })
+
+    $("#directions2").hide();
+    $("#waitingDiv1").hide();
+    $("#welcomeText2").show();
+    $("#login2").hide();
+
+    // populate the player 1 welcome text with the username 
+    $("#name2").text(username2);
 })
 
 // Get a snapshot of the current data
-userName1.child("Player1").on("value", function (snapshot) {
-    $("player1").text(snapshot.val());
-})
 
-userName2.child("Player2").on("value", function (snapshot) {
-    $("player2").text(snapshot.val());
-})
 
 // // when the login button is clicked: 
 // $("#add-user").on("click", function(event) {
